@@ -1,0 +1,15 @@
+version: '3.2'
+
+services:
+
+  db:
+    image: mongo:3.6.3
+    volumes: 
+      - ./data:/data
+    
+  todos:
+    build: ./todos
+    volumes:
+      - ./todos:/code
+    depends_on:
+      - db
