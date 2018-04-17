@@ -11,5 +11,4 @@ services:
     ports:
       - "80:8000"
     environment:
-      - DEBUG=1
-      - SECRET=b87704a64912103e8fb8fccde292bad2a86f253afeea7abc1987f5781c3be54e
+      - MONGOURL=db

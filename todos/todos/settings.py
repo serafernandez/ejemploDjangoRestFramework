@@ -76,12 +76,14 @@ WSGI_APPLICATION = 'todos.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+print('Conectando a MONGOURL: ' + os.environ.get('MONGOURL'))
+
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': 'exchange',
         'ENFORCE_SCHEMA': 'exchange',
-        'HOST': 'db',
+        'HOST': os.environ.get('MONGOURL'),
         'PORT': 27017
     }
 }
